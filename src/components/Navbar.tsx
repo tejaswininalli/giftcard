@@ -9,7 +9,8 @@ import {
   X, 
   Sparkles, 
   Calendar,
-  ChevronDown
+  ChevronDown,
+  MessageSquare
 } from 'lucide-react';
 import { useGiftora } from '../context/GiftoraContext';
 
@@ -201,6 +202,17 @@ export const Navbar: React.FC = () => {
 
             {/* Right Side Actions */}
             <div className="flex items-center space-x-2 sm:space-x-3">
+              {/* n8n AI Chatbot Trigger */}
+              <button
+                onClick={() => window.openN8nChat?.()}
+                className="hidden md:flex items-center gap-1.5 bg-gradient-to-r from-stone-900 to-purple-950 text-white text-xs sm:text-sm font-semibold px-3 sm:px-3.5 py-2 rounded-full border border-purple-500/30 shadow-sm hover:border-purple-400 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
+                title="Chat with n8n AI Gifting Concierge"
+              >
+                <MessageSquare className="w-3.5 h-3.5 text-rose-400" />
+                <span>AI Chat</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              </button>
+
               {/* AI Gift Finder Button */}
               <button
                 onClick={() => setIsAIFinderOpen(true)}
@@ -284,6 +296,21 @@ export const Navbar: React.FC = () => {
             >
               <Sparkles className="w-4 h-4 text-amber-200" />
               <span>🎁 Help Me Find a Gift (AI)</span>
+            </button>
+
+            {/* n8n Chatbot Trigger in Mobile Menu */}
+            <button
+              onClick={() => {
+                window.openN8nChat?.();
+                setMobileMenuOpen(false);
+              }}
+              className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-stone-900 text-white font-medium text-sm shadow-sm border border-purple-500/30"
+            >
+              <span className="flex items-center gap-2">
+                <MessageSquare className="w-4 h-4 text-rose-400" />
+                <span>Chat with n8n AI Concierge</span>
+              </span>
+              <span className="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full font-mono">Live</span>
             </button>
 
             <div className="grid grid-cols-2 gap-1 pt-2 font-medium text-sm text-stone-700">

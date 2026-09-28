@@ -159,6 +159,15 @@ export const Footer: React.FC = () => {
             </h5>
             <ul className="space-y-2 text-xs text-stone-400">
               <li>
+                <button
+                  onClick={() => window.openN8nChat?.()}
+                  className="hover:text-rose-300 transition-colors flex items-center gap-1.5 text-rose-300 font-semibold"
+                >
+                  <span>💬 Chat with n8n AI Concierge</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                </button>
+              </li>
+              <li>
                 <button onClick={() => setActiveTab('about')} className="hover:text-rose-400 transition-colors">
                   About Us
                 </button>

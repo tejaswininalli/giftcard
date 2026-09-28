@@ -23,6 +23,7 @@ import { WishlistModal } from './components/WishlistModal';
 import { AccountModal } from './components/AccountModal';
 import { AboutSection } from './components/AboutSection';
 import { Footer } from './components/Footer';
+import { N8nChatbot } from './components/N8nChatbot';
 import { Sparkles, Gift } from 'lucide-react';
 
 const AppContent: React.FC = () => {
@@ -121,17 +122,21 @@ const AppContent: React.FC = () => {
       </main>
 
       {/* Floating AI Finder Pill for Quick Access */}
-      <div className="fixed bottom-6 right-6 z-30">
+      <div className="fixed bottom-6 left-4 sm:left-auto sm:right-24 z-30">
         <button
           onClick={() => setIsAIFinderOpen(true)}
-          className="group flex items-center gap-2.5 px-4 sm:px-5 py-3 rounded-full bg-gradient-to-r from-rose-600 via-pink-600 to-purple-600 text-white font-bold text-xs sm:text-sm shadow-xl shadow-pink-600/30 hover:shadow-2xl hover:shadow-pink-600/40 hover:scale-105 active:scale-95 transition-all cursor-pointer"
+          className="group flex items-center gap-2.5 px-3.5 sm:px-5 py-3 rounded-full bg-gradient-to-r from-rose-600 via-pink-600 to-purple-600 text-white font-bold text-xs sm:text-sm shadow-xl shadow-pink-600/30 hover:shadow-2xl hover:shadow-pink-600/40 hover:scale-105 active:scale-95 transition-all cursor-pointer"
         >
           <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-amber-200">
             <Sparkles className="w-3.5 h-3.5 animate-spin" style={{ animationDuration: '4s' }} />
           </span>
-          <span>Help Me Find a Gift 🎁</span>
+          <span className="hidden xs:inline">Help Me Find a Gift 🎁</span>
+          <span className="xs:hidden">Find Gift 🎁</span>
         </button>
       </div>
+
+      {/* n8n Chatbot Widget */}
+      <N8nChatbot />
 
       {/* Footer */}
       <Footer />
