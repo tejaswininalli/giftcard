@@ -1,0 +1,6 @@
+{
+  "name": "Giftora - Gift Cards & Thoughtful Gifts",
+  "description": "A modern, attractive e-commerce website offering digital gift cards, personalized gifts, hampers, and AI gift recommendations for every occasion.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
